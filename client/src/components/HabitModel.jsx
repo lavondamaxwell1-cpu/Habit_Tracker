@@ -39,7 +39,7 @@ function HabitModel({ isOpen, onClose, onSave }) {
         </button>
 
         <h2 className="mb-2 text-2xl font-bold text-slate-900">
-          Add New Habit
+          New Habit
         </h2>
 
         <p className="mb-5 text-sm text-slate-600">
