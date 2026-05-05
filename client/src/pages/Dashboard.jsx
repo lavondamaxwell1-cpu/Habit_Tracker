@@ -11,7 +11,7 @@ import HabitCardWithProgress from "../components/HabitCardWithProgress";
 import HabitModel from "../components/HabitModel";
 import EditHabitModal from "../components/EditHabitModal";
 import { toast } from "react-toastify";
-function Dashboard() {
+export default function Dashboard() {
   const [habits, setHabits] = useState([]);
   const [isHabitModelOpen, setIsHabitModelOpen] = useState(false);
   const [editingHabit, setEditingHabit] = useState(null);
@@ -86,7 +86,7 @@ function Dashboard() {
   const bestStreak = Math.max(...habits.map((h) => h.longestStreak || 0), 0);
 
   return (
-    <div className="min-h-screen bg-slate-100 dark:bg-slate-950">
+    <div className="min-h-screen bg-slate-100 px-4 py-8">
       <div className="mx-auto max-w-6xl">
         {/* HEADER */}
         <div className="mb-6 flex items-center justify-between">
@@ -101,12 +101,12 @@ function Dashboard() {
             onClick={() => setIsHabitModelOpen(true)}
             className="rounded-xl bg-indigo-600 px-5 py-3 font-semibold text-white shadow hover:bg-indigo-700"
           >
-            + Add Habit
+            ➕ New Habit
           </button>
         </div>
 
         {/* STATS */}
-        <div className="min-h-screen bg-slate-100 dark:bg-slate-950">
+        <div className="grid grid-cols-3 gap-4 mb-10">
           <div className="bg-white p-4 rounded-xl shadow text-center">
             <p className="text-sm text-slate-500">Habits</p>
             <p className="text-xl font-bold">{totalHabits}</p>
@@ -173,5 +173,3 @@ function Dashboard() {
     </div>
   );
 }
-
-export default Dashboard;

@@ -1,31 +1,36 @@
-import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
-  const [dark, setDark] = useState(localStorage.getItem("theme") === "dark");
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (dark) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [dark]);
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    navigate("/login");
+  };
 
   return (
-    <nav className="bg-white p-4 shadow dark:bg-slate-900">
-      <div className="flex justify-between items-center">
-        <h1 className="text-lg font-bold text-slate-900 dark:text-white">
-          Habit Tracker
-        </h1>
+    <nav className="bg-white shadow">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        {/* Logo / Title */}
+        <h1 className="text-lg font-bold text-slate-900">Habit Tracker</h1>
 
-        <button
-          onClick={() => setDark((prev) => !prev)}
-          className="rounded-xl bg-slate-200 px-4 py-2 font-semibold text-slate-800 dark:bg-slate-700 dark:text-white"
-        >
-          {dark ? "☀️ Light" : "🌙 Dark"}
-        </button>
+        {/* Right Side */}
+        <div className="flex items-center gap-4">
+          <Link
+            to="/"
+            className="font-semibold text-slate-700 hover:text-indigo-600"
+          >
+            Dashboard
+          </Link>
+
+          <button
+            onClick={handleLogout}
+            className="rounded-xl bg-red-500 px-4 py-2 font-semibold text-white hover:bg-red-600"
+          >
+            Logout
+          </button>
+        </div>
       </div>
     </nav>
   );
