@@ -75,11 +75,20 @@ router.post(
     user.resetOtpExpire = new Date(Date.now() + 10 * 60 * 1000);
     await user.save();
 
-    await sendEmail({
-      to: user.email,
-      subject: "Password Reset Code",
-      text: `Your Habit Tracker OTP is: ${otp}. It expires in 10 minutes.`,
-    });
+    try {
+      await sendEmail({
+        to: user.email,
+        subject: "Password Reset Code",
+        text: `Your Habit Tracker OTP is: ${otp}. It expires in 10 minutes.`,
+      });
+    } catch (error) {
+      console.error("EMAIL SEND ERROR:", error);
+
+      return res.status(500).json({
+        message: "Failed to send OTP email",
+        error: error.message,
+      });
+    }
 
     res.json({
       message: "OTP sent to your email 📧",

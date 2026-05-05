@@ -1,66 +1,112 @@
-# 📘 Habit Tracker App
+# 🔥 Habit Tracker App
 
-A full-stack Habit Tracker application that allows users to create, manage, and track habits with secure authentication and OTP-based password reset.
+A full-stack habit tracking application that helps users build consistency, track streaks, and stay motivated daily.
 
----
+## 🚀 Live Demo
 
-## 🚀 Features
-
-### 🔐 Authentication
-- Register & Login
-- JWT-based authentication
-- Protected routes
-- Logout functionality
-- Forgot password with OTP (email verification)
-- Reset password with secure OTP validation
-
-### 📊 Habit Management
-- Create habits
-- Edit habits
-- Delete habits
-- View all habits on dashboard
-
-### 💡 User Experience
-- Toast notifications (success/error)
-- Loading states on actions
-- Form validation
-- OTP input with:
-  - Auto-focus
-  - Auto-submit
-  - Paste support
-  - Resend OTP with countdown
-
-### 🧭 Navigation
-- Dynamic navbar:
-  - Shows username when logged in
-  - Login/Register when logged out
-- Redirect protection for authenticated users
+👉 https://habit-tracker-ten-roan.vercel.app
 
 ---
 
-## 🛠️ Tech Stack
+## ✨ Features
+
+* 🔐 User Authentication (Register & Login)
+* 🔑 Forgot Password with OTP (Email Reset)
+* 🔄 Reset Password Flow
+* 📊 Habit Dashboard
+* ➕ Create, Edit, Delete Habits
+* ✅ Mark Habits as Completed
+* 🔥 Streak System (Daily tracking)
+* 🏆 Longest Streak Tracking
+* 📅 Last 7 Days Completion Tracker
+* 🎉 Completion Feedback (UI + Toasts)
+* 📱 Mobile Responsive Design
+* 🌐 Fully Deployed (Frontend + Backend)
+
+---
+
+## 🧠 How It Works
+
+* Users create habits
+* Each day they mark them complete
+* The app tracks:
+
+  * current streak
+  * longest streak
+  * completion history
+* Missing a day resets the streak
+
+---
+
+## 🛠 Tech Stack
 
 ### Frontend
-- React
-- React Router
-- Axios
-- React Toastify
-- React Bootstrap
+
+* React (Vite)
+* React Router
+* Axios
+* Tailwind CSS
+* React Toastify
 
 ### Backend
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- bcryptjs
-- jsonwebtoken (JWT)
-- Nodemailer
+
+* Node.js
+* Express
+* MongoDB (Mongoose)
+* JWT Authentication
+
+### Deployment
+
+* Frontend: Vercel
+* Backend: Render
 
 ---
 
-## ⚙️ Installation
+## 🔐 Environment Variables
 
-### 1. Clone the repository
-```bash
-git clone <your-repo-url>
-cd Habit_Tracker
+### Backend (.env)
+
+```
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_secret
+EMAIL_USER=your_email
+EMAIL_PASS=your_email_password
+CLIENT_URL=https://habit-tracker-ten-roan.vercel.app
+```
+
+### Frontend (.env)
+
+```
+VITE_API_URL=https://habit-tracker-fmml.onrender.com/api
+```
+
+---
+
+## 📸 Screenshots
+
+(Add screenshots here)
+
+---
+
+## 🎯 Future Improvements
+
+* 🌙 Dark Mode
+* 🔔 Habit Reminders
+* 📊 Analytics Dashboard
+* 🎨 Custom Themes
+* 🧑 User Profile Page
+
+---
+
+## 👨‍💻 Author
+
+Lavonda Maxwell
+GitHub: https://github.com/lavondamaxwell1-cpu
+
+---
+
+## 💡 Inspiration
+
+Built to help people stay consistent and build better habits daily.
+
+---

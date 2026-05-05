@@ -7,24 +7,27 @@ import { forgotPassword } from "../api/auth.js";
 function ForgotPassword() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-const navigate = useNavigate();
- const handleSubmit = async (e) => {
-   e.preventDefault();
-   setLoading(true);
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
 
-   try {
-     await forgotPassword({ email });
+    try {
+      await forgotPassword({ email });
 
-     toast.success("OTP sent to your email");
+      toast.success("OTP sent to your email");
 
-     navigate("/reset-password"); // 🔥 THIS IS WHAT YOU WERE MISSING
-   } catch (err) {
-     console.error(err);
-     toast.error(err.response?.data?.message || "Something went wrong");
-   } finally {
-     setLoading(false);
-   }
- };
+      navigate("/reset-password"); // 🔥 THIS IS WHAT YOU WERE MISSING
+    } catch (err) {
+      console.error("FORGOT PASSWORD ERROR:", err);
+      console.error("ERROR RESPONSE:", err.response?.data);
+      console.error("STATUS:", err.response?.status);
+
+      toast.error(err.response?.data?.message || "Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-slate-100 px-4 py-10">
