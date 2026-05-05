@@ -37,6 +37,16 @@ function Register() {
 
   return (
     <div className="min-h-screen bg-slate-100 px-4 py-10">
+      <div className="mb-8 text-center">
+        <h1 className="text-4xl font-bold text-slate-900">
+          Build better habits, one day at a time.
+        </h1>
+
+        <p className="mx-auto mt-3 max-w-xl text-slate-600">
+          Track your daily habits, complete goals, build streaks, and stay
+          motivated with a simple habit tracker made for consistency.
+        </p>
+      </div>
       <div className="mx-auto flex min-h-[80vh] max-w-6xl items-center justify-center">
         <div className="grid w-full overflow-hidden rounded-3xl bg-white shadow-xl md:grid-cols-2">
           <div className="hidden bg-indigo-600 p-10 text-white md:flex md:flex-col md:justify-center">
