@@ -89,7 +89,7 @@ export default function Dashboard() {
     <div className="min-h-screen bg-slate-100 px-4 py-8">
       <div className="mx-auto max-w-6xl">
         {/* HEADER */}
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h1 className="text-3xl font-bold text-slate-900">
               Welcome back, {username} 👋
@@ -99,14 +99,14 @@ export default function Dashboard() {
 
           <button
             onClick={() => setIsHabitModelOpen(true)}
-            className="rounded-xl bg-indigo-600 px-5 py-3 font-semibold text-white shadow hover:bg-indigo-700"
+            className="w-full rounded-xl bg-indigo-600 px-5 py-3 font-semibold text-white shadow hover:bg-indigo-700 sm:w-auto"
           >
             ➕ New Habit
           </button>
         </div>
 
         {/* STATS */}
-        <div className="grid grid-cols-3 gap-4 mb-10">
+        <div className="mb-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
           <div className="bg-white p-4 rounded-xl shadow text-center">
             <p className="text-sm text-slate-500">Habits</p>
             <p className="text-xl font-bold">{totalHabits}</p>

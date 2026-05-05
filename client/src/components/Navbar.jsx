@@ -11,12 +11,12 @@ function Navbar() {
 
   return (
     <nav className="bg-white shadow">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
         {/* Logo / Title */}
         <h1 className="text-lg font-bold text-slate-900">Habit Tracker</h1>
 
         {/* Right Side */}
-        <div className="flex items-center gap-4">
+        <div className="flex w-full items-center justify-between gap-3 sm:w-auto sm:justify-end">
           <Link
             to="/"
             className="font-semibold text-slate-700 hover:text-indigo-600"
