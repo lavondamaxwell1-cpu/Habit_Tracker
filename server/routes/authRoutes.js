@@ -62,7 +62,7 @@ router.post(
   "/forgot-password",
   asyncHandler(async (req, res) => {
     const { email } = req.body;
-
+  console.log("FORGOT PASSWORD ROUTE HIT");
     const user = await User.findOne({ email });
 
     if (!user) {
