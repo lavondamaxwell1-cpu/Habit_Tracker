@@ -1,56 +1,31 @@
-import { Link, useNavigate } from "react-router-dom";
-import React from "react";
-function Navbar() {
-  const navigate = useNavigate();
-  const token = localStorage.getItem("token");
+import { useEffect, useState } from "react";
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    navigate("/login");
-  };
+function Navbar() {
+  const [dark, setDark] = useState(localStorage.getItem("theme") === "dark");
+
+  useEffect(() => {
+    if (dark) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [dark]);
 
   return (
-    <nav className="bg-white shadow-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <Link to="/" className="text-xl font-bold text-indigo-600">
-          HabitTracker
-        </Link>
+    <nav className="bg-white p-4 shadow dark:bg-slate-900">
+      <div className="flex justify-between items-center">
+        <h1 className="text-lg font-bold text-slate-900 dark:text-white">
+          Habit Tracker
+        </h1>
 
-        <div className="flex items-center gap-4">
-          {token ? (
-            <>
-              <Link
-                to="/"
-                className="font-medium text-slate-700 hover:text-indigo-600"
-              >
-                Dashboard
-              </Link>
-
-              <button
-                onClick={handleLogout}
-                className="rounded-xl bg-red-500 px-4 py-2 text-white hover:bg-red-600"
-              >
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Link
-                to="/login"
-                className="font-medium text-slate-700 hover:text-indigo-600"
-              >
-                Login
-              </Link>
-
-              <Link
-                to="/register"
-                className="rounded-xl bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700"
-              >
-                Register
-              </Link>
-            </>
-          )}
-        </div>
+        <button
+          onClick={() => setDark((prev) => !prev)}
+          className="rounded-xl bg-slate-200 px-4 py-2 font-semibold text-slate-800 dark:bg-slate-700 dark:text-white"
+        >
+          {dark ? "☀️ Light" : "🌙 Dark"}
+        </button>
       </div>
     </nav>
   );

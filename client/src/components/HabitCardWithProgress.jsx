@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 export default function HabitCardWithProgress({
   habit,
@@ -21,19 +21,21 @@ export default function HabitCardWithProgress({
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25 }}
-      className="rounded-2xl bg-white p-5 shadow-md transition hover:-translate-y-1 hover:shadow-lg"
+      className="rounded-2xl bg-white p-5 shadow-md dark:bg-slate-900"
     >
-      <h2 className="text-xl font-bold text-slate-900">{habit.title}</h2>
+      <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+        {habit.title}
+      </h2>
 
       <div className="mt-4 h-3 overflow-hidden rounded-full bg-slate-200">
         <div
-          className="h-full rounded-full bg-indigo-600 transition-all"
+           className="text-sm text-slate-600 dark:text-slate-300">
           style={{ width: `${progress}%` }}
-        />
+        </div>
       </div>
 
       <div className="mt-2 flex justify-between text-sm font-semibold">
-        <span className="text-slate-600">Progress</span>
+        <span className="text-slate-600 dark:text-slate-300">Progress</span>
         <span className="text-indigo-600">{progress}%</span>
       </div>
 
@@ -67,13 +69,15 @@ export default function HabitCardWithProgress({
 
         <div className="flex gap-2">
           {completedDates.slice(-7).length > 0 ? (
-            completedDates.slice(-7).map((date) => (
-              <div
-                key={date}
-                title={date}
-                className="h-7 w-7 rounded-lg bg-emerald-200"
-              />
-            ))
+            completedDates
+              .slice(-7)
+              .map((date) => (
+                <div
+                  key={date}
+                  title={date}
+                  className="h-7 w-7 rounded-lg bg-emerald-200"
+                />
+              ))
           ) : (
             <p className="text-sm text-slate-500">No completions yet</p>
           )}
@@ -94,8 +98,8 @@ export default function HabitCardWithProgress({
         {isCompletedToday
           ? "Completed Today ✅"
           : habit.streak === 0
-          ? "Start Streak 🔥"
-          : "Keep Streak Alive 🔥"}
+            ? "Start Streak 🔥"
+            : "Keep Streak Alive 🔥"}
       </motion.button>
 
       {missed && (

@@ -86,7 +86,7 @@ function Dashboard() {
   const bestStreak = Math.max(...habits.map((h) => h.longestStreak || 0), 0);
 
   return (
-    <div className="min-h-screen bg-slate-100 px-4 py-8">
+    <div className="min-h-screen bg-slate-100 dark:bg-slate-950">
       <div className="mx-auto max-w-6xl">
         {/* HEADER */}
         <div className="mb-6 flex items-center justify-between">
@@ -106,7 +106,7 @@ function Dashboard() {
         </div>
 
         {/* STATS */}
-        <div className="grid grid-cols-3 gap-4 mb-10">
+        <div className="min-h-screen bg-slate-100 dark:bg-slate-950">
           <div className="bg-white p-4 rounded-xl shadow text-center">
             <p className="text-sm text-slate-500">Habits</p>
             <p className="text-xl font-bold">{totalHabits}</p>
