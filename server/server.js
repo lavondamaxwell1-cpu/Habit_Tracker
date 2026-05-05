@@ -9,8 +9,21 @@ import habitRoutes from "./routes/habitRoutes.js";
 dotenv.config({ path: "./.env" }); // 👈 force correct path
 
 const app = express();
-
-app.use(cors());
+const allowedOrigins = ["https://habit-tracker-ten-roan.vercel.app"];
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // allow requests with no origin (like Postman)
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        console.log("BLOCKED ORIGIN:", origin);
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  }),
+);
 app.use(express.json());
 
 // Routes
