@@ -26,7 +26,7 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <Route path="/" element={<Home />} />
+
       <Routes>
         <Route
           path="/login"
@@ -55,7 +55,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-
+        <Route path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
