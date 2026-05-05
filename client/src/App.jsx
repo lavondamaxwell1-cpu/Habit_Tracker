@@ -13,7 +13,7 @@ import Register from "./pages/Register.jsx";
 import ForgotPassword from "./pages/ForgotPassword.jsx";
 import ResetPassword from "./pages/ResetPassword.jsx";
 import { getAuthToken } from "./api/auth.js";
-
+import Home from "./pages/Home.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -26,7 +26,7 @@ function App() {
   return (
     <Router>
       <NavBar />
-
+      <Route path="/" element={<Home />} />
       <Routes>
         <Route
           path="/login"
@@ -48,7 +48,7 @@ function App() {
         <Route path="/reset-password" element={<ResetPassword />} />
 
         <Route
-          path="/"
+          path="/dashboard"
           element={
             <ProtectedRoute>
               <Dashboard />
