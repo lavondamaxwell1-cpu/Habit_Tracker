@@ -84,8 +84,25 @@ VITE_API_URL=https://habit-tracker-fmml.onrender.com/api
 
 ## 📸 Screenshots
 
-(Add screenshots here)
+## 📸 Screenshots
 
+### 🏠 Home Page
+![Home Page](./screenshots/homePage.png)
+
+### 🔐 Login Page
+![Login Page](./screenshots/loginPage.png)
+
+### 📝 Register Page
+![Register Page](./screenshots/registerPage.png)
+
+### 📊 Habit Dashboard
+![Habit Page](./screenshots/habitPage.png)
+
+### 🔑 Forgot Password
+![Forgot Password](./screenshots/forgotPassword.png)
+
+### 🔁 Reset Password
+![Reset Password](./screenshots/resetPassword.png)
 ---
 
 ## 🎯 Future Improvements
