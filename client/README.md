@@ -1,16 +1,125 @@
-# React + Vite
+# 🔥 Habit Tracker App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack habit tracking application that helps users build consistency, track streaks, and stay motivated daily.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉 https://habit-tracker-ten-roan.vercel.app
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+* 🔐 User Authentication (Register & Login)
+* 🔑 Forgot Password with OTP (Email Reset)
+* 🔄 Reset Password Flow
+* 📊 Habit Dashboard
+* ➕ Create, Edit, Delete Habits
+* ✅ Mark Habits as Completed
+* 🔥 Streak System (Daily tracking)
+* 🏆 Longest Streak Tracking
+* 📅 Last 7 Days Completion Tracker
+* 🎉 Completion Feedback (UI + Toasts)
+* 📱 Mobile Responsive Design
+* 🌐 Fully Deployed (Frontend + Backend)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧠 How It Works
+
+* Users create habits
+* Each day they mark them complete
+* The app tracks:
+
+  * current streak
+  * longest streak
+  * completion history
+* Missing a day resets the streak
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+* React (Vite)
+* React Router
+* Axios
+* Tailwind CSS
+* React Toastify
+
+### Backend
+
+* Node.js
+* Express
+* MongoDB (Mongoose)
+* JWT Authentication
+
+### Deployment
+
+* Frontend: Vercel
+* Backend: Render
+
+---
+
+## 🔐 Environment Variables
+
+### Backend (.env)
+
+```
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_secret
+EMAIL_USER=your_email
+EMAIL_PASS=your_email_password
+CLIENT_URL=https://habit-tracker-ten-roan.vercel.app
+```
+
+### Frontend (.env)
+
+```
+VITE_API_URL=https://habit-tracker-fmml.onrender.com/api
+```
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Home Page](screenshots/homePage.png)
+
+### 🔐 Login Page
+![Login Page](screenshots/loginPage.png)
+
+### 📝 Register Page
+![Register Page](screenshots/registerPage.png)
+
+### 📊 Habit Dashboard
+![Habit Page](screenshots/habitPage.png)
+
+### 🔑 Forgot Password
+![Forgot Password](screenshots/forgotPassword.png)
+
+### 🔁 Reset Password
+![Reset Password](screenshots/resetPassword.png)
+## 🎯 Future Improvements
+
+* 🌙 Dark Mode
+* 🔔 Habit Reminders
+* 📊 Analytics Dashboard
+* 🎨 Custom Themes
+* 🧑 User Profile Page
+
+---
+
+## 👨‍💻 Author
+
+Lavonda Maxwell
+GitHub: https://github.com/lavondamaxwell1-cpu
+
+---
+
+## 💡 Inspiration
+
+Built to help people stay consistent and build better habits daily.
+
+---
